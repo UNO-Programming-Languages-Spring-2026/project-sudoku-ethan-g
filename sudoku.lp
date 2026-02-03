@@ -6,4 +6,6 @@
 
 % Your implementation please...
 
+test
+
 #show sudoku/3.
