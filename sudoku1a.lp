@@ -12,9 +12,11 @@
 { sudoku(X, Y, N) : X = 1..grid_size, Y = 1..grid_size, N = 1..grid_size } = 1.
 % achieved: Added one number between 1 and 4 to each cell on the grid
 
-:- sudoku(X1,Y1,N1), initial(X2,Y2,N2), X1 = X2, Y1 = Y2, N1 != N2.
+:- sudoku(X1, Y1, N1), initial(X2, Y2, N2), X1 = X2, Y1 = Y2, N1 != N2.
 % achieved: Removed all numbers given in the initial grid except the initial numbers given
 
+:- sudoku(X1, _, N1), sudoku(X2, _, N2), X1 = X2, N1 = N2.
+:- sudoku(_, Y1, N1), sudoku(_, Y2, N2), Y1 = Y2, N1 = N2.
 
 
 
