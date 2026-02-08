@@ -6,6 +6,9 @@
 
 % Your implementation please...
 
+% Run Instance: clingo sudoku1a.lp instances/4x4/ex00.lp 0
+% Check Code:   python autograder.py --question=1b
+
 #const grid_size    = 4.
 #const subgrid_size = 2.
 
