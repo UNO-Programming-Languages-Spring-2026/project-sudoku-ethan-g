@@ -22,7 +22,5 @@
 :- sudoku(X1, Y1, N1), sudoku(X2, Y2, N2), X1 != X2, Y1 = Y2,  N1 = N2.
 % achieved: Removed all duplicate numbers that share the same row or column
 
-
-
 #show sudoku/3.
 
