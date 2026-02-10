@@ -6,6 +6,7 @@
 
 % Your implementation please...
 
+% Run Instance: clingo sudoku1c.lp instances/4x4/ex00.lp 0
 % Check Code: python autograder.py --question=1c
 
 #const grid_size    = 4.
@@ -21,9 +22,13 @@
 :- sudoku(X1, Y1, N1), sudoku(X2, Y2, N2), X1 != X2, Y1 = Y2,  N1 = N2.
 % achieved: Removed all duplicate numbers that share the same row or column
 
+%:- sudoku(X1, Y1, N1), N1 = 0.
+
 subgrid(X, Y, G) :- X = 1..grid_size, Y = 1..grid_size, G = 1 + (((X - 1) / subgrid_size) * subgrid_size + (Y - 1) / subgrid_size).
 % achieved: Determined the subgrid any particular cell was in via the given equation
 
-#show subgrid/3.
+:- sudoku(X1, Y1, N1), sudoku(X2, Y2, N2), subgrid(X3, Y3, G1), subgrid(X4, Y4, G2), X1 = X3, Y1 = Y3, X2 = X4, Y2 = Y4, N1 = N2, G1 = G2.
+
+%#show subgrid/3.
 #show sudoku/3.
 
