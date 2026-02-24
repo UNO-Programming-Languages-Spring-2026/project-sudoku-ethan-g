@@ -8,6 +8,7 @@
 
 % Check Code: python autograder.py --question=2
 
+
 #const grid_size    = 9.
 #const subgrid_size = 3.
 
