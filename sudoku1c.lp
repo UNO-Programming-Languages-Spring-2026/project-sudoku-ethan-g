@@ -27,7 +27,8 @@
 subgrid(X, Y, G) :- X = 1..grid_size, Y = 1..grid_size, G = 1 + (((X - 1) / subgrid_size) * subgrid_size + (Y - 1) / subgrid_size).
 % achieved: Determined the subgrid any particular cell was in via the given equation
 
-:- sudoku(X1, Y1, N1), sudoku(X2, Y2, N2), subgrid(X3, Y3, G1), subgrid(X4, Y4, G2), X1 = X3, Y1 = Y3, X2 = X4, Y2 = Y4, N1 = N2, G1 = G2.
+:- sudoku(X1, Y1, N1), sudoku(X2, Y2, N2), subgrid(X1, Y1, G1), subgrid(X2, Y2, G2), N1 == N2, G1 == G2, X1 != X2, Y1 != Y2.
+% achieved: Removed all instances in which two numbers had the same value and were in the same subgrid but not on the same cell
 
 %#show subgrid/3.
 #show sudoku/3.
